@@ -24,6 +24,27 @@ function dameElElementoDePosicion(miArray,posicion){
         + posicion + " : " + miArray[posicion])
 }
 dameElElementoDePosicion(listaDeCuentas,0);
-//Agregar el elemento 3
-//Agregar elemento al final sin push
-//Eliminar elemento al principio sin shift
+// TODO: Agregar el elemento 3
+var elemento = 3;
+var posicionFinal = listaDeCuentas.length // 5
+listaDeCuentas[posicionFinal] = elemento;
+// Agregar elemento al final sin push
+var miElemento = "elemento"
+listaDeCuentas.length // 6
+listaDeCuentas[listaDeCuentas.length] = miElemento;
+// TODO: Eliminar elemento al principio sin shift
+function eliminoElPrimerElemento(lista){
+    var temporal = [];
+    lista[0] = "BORRAR";
+    for(var i = 1; i<lista.length; i++){
+        temporal[i-1] = lista[i];
+    }
+    print("lista antes: " + lista.length);
+    print("temporal antes: " + temporal.length);
+    lista = temporal;
+    print("lista despues: " + lista.length);
+    print("temporal despues: " + temporal.length);
+    return temporal;
+}
+listaDeCuentas = eliminoElPrimerElemento(listaDeCuentas);
+print("ListaDeCuentas : " + listaDeCuentas.length)
